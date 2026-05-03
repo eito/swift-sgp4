@@ -38,7 +38,10 @@ let package = Package(
         ),
 		.target(
 			name: "SGPKitCPP",
-			path: "Sources/sgp4Lib"
+			path: "Sources/sgp4Lib",
+                        cxxSettings: [
+                           .unsafeFlags(["-std=c++17"])
+                        ]
 		),
 		.testTarget(
 			name: "SGPKitTests",
