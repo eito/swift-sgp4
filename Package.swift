@@ -34,9 +34,7 @@ let package = Package(
         .target(
             name: "SGP4LibWrapper",
             dependencies: ["SGPKitCPP"],
-            swiftSettings: [
-              .interoperabilityMode(.Cxx)
-            ]
+            swiftSettings: [.interoperabilityMode(.Cxx)]
         ),
 		.target(
 			name: "SGPKitCPP",
