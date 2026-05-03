@@ -34,13 +34,19 @@ let package = Package(
         .target(
             name: "SGP4LibWrapper",
             dependencies: ["SGPKitCPP"],
+            swiftSettings: [
+              .interoperabilityMode(.Cxx)
+            ],
             cxxSettings: [
               .unsafeFlags(["-std=c++17"])
-            ]      
+            ]
         ),
 		.target(
 			name: "SGPKitCPP",
-			path: "Sources/sgp4Lib"
+			path: "Sources/sgp4Lib",
+                        cxxSettings: [
+                          .unsafeFlags(["-std=c++17"])
+                        ]
 		),
 		.testTarget(
 			name: "SGPKitTests",
